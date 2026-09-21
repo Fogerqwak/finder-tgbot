@@ -1,0 +1,18 @@
+app = "REPLACE-WITH-YOUR-APP-NAME"
+primary_region = "fra"
+
+[build]
+
+[env]
+  WATCH_DB_PATH = "/data/watchlist.db"
+
+[mounts]
+  source = "watchlist_data"
+  destination = "/data"
+
+[processes]
+  app = "python main.py"
+
+[[vm]]
+  size = "shared-cpu-1x"
+  memory = "256mb"
